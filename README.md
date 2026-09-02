@@ -1,31 +1,32 @@
-# Expense Tracker JavaScript
+# Expense Tracker
 
 ## Project Description
 
-This project is a simple Expense Tracker application built using HTML, CSS, and JavaScript.
+Expense Tracker is a web application that helps users record and monitor their expenses.
 
-The application allows users to view their expenses, calculate the total amount spent, and add new expenses without refreshing the page.
+This final version uses JavaScript ES Modules, array methods, DOM manipulation, event listeners, and Bootstrap to create a functional and responsive expense tracking application.
 
 ## Features
 
-* Stores expenses in an array of objects.
-* Each expense contains:
-
-  * Name
-  * Amount
-  * Category
-* Calculates the total expenses using `reduce()`.
+* Stores expenses as an array of objects.
+* Each expense contains a name, amount, and category.
+* Calculates total expenses using the `reduce()` method.
 * Formats expense amounts to two decimal places.
-* Dynamically renders expenses in an HTML table.
-* Allows users to add new expenses using a form.
-* Updates the table automatically when a new expense is added.
-* Uses JavaScript event listeners to handle user actions.
+* Dynamically renders expenses to the page.
+* Allows users to add new expenses without refreshing the page.
+* Uses an event listener for the Add Expense button.
+* Uses ES Module imports and exports.
+* Uses Bootstrap for responsive layout and form styling.
+* Includes custom CSS styling.
+* Responsive across different screen sizes.
 
 ## Technologies Used
 
 * HTML5
 * CSS3
 * JavaScript
+* Bootstrap 5
+* ES Modules
 
 ## Project Structure
 
@@ -35,42 +36,87 @@ expense-tracker-js/
 ├── index.html
 ├── style.css
 ├── script.js
+├── budget.js
 └── README.md
 ```
 
-## How It Works
+## JavaScript Modules
 
-The expenses are stored as objects inside a JavaScript array.
+The project separates its JavaScript logic into two files.
 
-The `calculateTotal()` function uses the `reduce()` method to calculate the total amount of all expenses.
+### budget.js
 
-The `renderExpenses()` function clears the existing table and dynamically creates new table rows from the expenses array.
+Contains and exports:
 
-When the user clicks the **Add Expense** button, an event listener reads the form values, creates a new expense object, adds it to the array, and updates the table without refreshing the page.
+* `calculateTotal()`
+* `renderExpenses()`
 
-## Learning Objectives
+### script.js
 
-This project demonstrates my understanding of:
+Contains:
+
+* The expenses array
+* The Add Expense event listener
+* Form input handling
+* Adding new expenses
+* Importing functions from `budget.js`
+
+## Bootstrap
+
+Bootstrap is included through a CDN and is used for:
+
+* Responsive grid layout
+* Buttons
+* Forms
+* Tables
+* Cards
+* Responsive table behavior
+
+Custom CSS is still used to maintain the project's own design.
+
+## How the Application Works
+
+When the page loads, the existing expenses are displayed automatically.
+
+When a user enters an expense and clicks **Add Expense**, JavaScript:
+
+1. Reads the form values.
+2. Creates a new expense object.
+3. Adds the object to the expenses array.
+4. Re-renders the table.
+5. Updates the total expenses.
+6. Clears the form.
+
+The page does not need to be refreshed.
+
+## Final Learning Outcomes
+
+This project demonstrates understanding of:
 
 * Arrays of objects
-* JavaScript functions
-* Array methods such as `reduce()` and `forEach()`
+* Functions
+* `reduce()`
+* `forEach()`
 * DOM manipulation
 * Event listeners
-* Form input handling
-* Number formatting
-* Dynamic content rendering
+* ES Modules
+* `import` and `export`
+* Form handling
+* Bootstrap
+* Responsive web design
+* GitHub Pages deployment
 
 ## Future Improvements
 
-Future versions of this project could include:
+Possible future features include:
 
-* Delete expense functionality
-* Edit expense functionality
-* Expense filtering by category
+* Delete expenses
+* Edit expenses
 * Local storage
-* Monthly budget tracking
-* Expense charts and summaries
+* Budget limits
+* Expense filtering
+* Expense charts
+* Monthly expense reports
 
 ## Author
 

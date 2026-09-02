@@ -1,73 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Expense Tracker</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Your custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>Expense Tracker</h1>
+    <div class="container py-5">
 
-    <!-- Add Expense Form -->
-    <section>
-        <h2>Add Expense</h2>
-
-        <input
-            type="text"
-            id="expenseName"
-            placeholder="Expense name"
-        >
-
-        <input
-            type="number"
-            id="expenseAmount"
-            placeholder="Amount"
-        >
-
-        <select id="expenseCategory">
-            <option value="">Select category</option>
-            <option value="Housing">Housing</option>
-            <option value="Food">Food</option>
-            <option value="Transport">Transport</option>
-            <option value="Utilities">Utilities</option>
-            <option value="Entertainment">Entertainment</option>
-        </select>
-
-        <button id="addExpenseButton">
-            Add Expense
-        </button>
-    </section>
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <h1>Expense Tracker</h1>
+            <p class="text-muted">
+                Track your expenses and manage your budget.
+            </p>
+        </div>
 
 
-    <!-- Expense Table -->
-    <section>
-        <h2>Expenses</h2>
+        <!-- Add Expense Form -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body">
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Amount</th>
-                    <th>Category</th>
-                </tr>
-            </thead>
+                <h2 class="h4 mb-4">Add Expense</h2>
 
-            <tbody id="expenseTableBody">
-                <!-- JavaScript will add rows here -->
-            </tbody>
-        </table>
+                <div class="row g-3">
 
-        <h3>
-            Total Expenses:
-            <span id="totalExpenses">$0.00</span>
-        </h3>
-    </section>
+                    <div class="col-md-4">
+                        <label for="expenseName" class="form-label">
+                            Expense Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="expenseName"
+                            class="form-control"
+                            placeholder="e.g. Shopping"
+                        >
+                    </div>
 
 
-    <script src="script.js"></script>
+                    <div class="col-md-4">
+                        <label for="expenseAmount" class="form-label">
+                            Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            id="expenseAmount"
+                            class="form-control"
+                            placeholder="e.g. 50"
+                            min="0"
+                            step="0.01"
+                        >
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <label for="expenseCategory" class="form-label">
+                            Category
+                        </label>
+
+                        <select
+                            id="expenseCategory"
+                            class="form-select"
+                        >
+                            <option value="">Select category</option>
+                            <option value="Housing">Housing</option>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Utilities">Utilities</option>
+                            <option value="Entertainment">
+                                Entertainment
+                            </option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-12">
+                        <button
+                            id="addExpenseButton"
+                            class="btn btn-primary"
+                        >
+                            Add Expense
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Expense Table -->
+        <div class="card shadow-sm">
+
+            <div class="card-body">
+
+                <h2 class="h4 mb-4">Your Expenses</h2>
+
+                <div class="table-responsive">
+
+                    <table class="table table-striped table-hover">
+
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Amount</th>
+                                <th>Category</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="expenseTableBody">
+                            <!-- JavaScript creates rows here -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="text-end mt-4">
+                    <h3 class="h5">
+                        Total Expenses:
+                        <span id="totalExpenses">$0.00</span>
+                    </h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript Module -->
+    <script type="module" src="script.js"></script>
 
 </body>
+
 </html>
