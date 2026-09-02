@@ -3,165 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Budget Tracker</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="heading">
-            <img
-                src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png"
-                alt="Budget Tracker logo"
-                width="60"
-            >
-            <div>
-                <h1>My Budget Tracker</h1>
-                <p>Track your expenses and manage your money wisely.</p>
-            </div>
-        </div>
-    </header>
+    <main class="container">
 
-    <main>
+        <!-- Page Heading -->
+        <section class="heading-card">
+            <p class="eyebrow">PERSONAL FINANCE</p>
 
-        <!-- Add Expense Section -->
-        <section class="add-expense-section">
+            <h1>Budget Tracker</h1>
+
+            <p class="intro">
+                Keep track of your expenses and manage your money with confidence.
+            </p>
+        </section>
+
+
+        <!-- Add Expense Form -->
+        <section class="card">
+
             <h2>Add Expense</h2>
 
-            <form id="expense-form">
+            <form class="expense-form">
 
-                <label for="expense-name">Expense Name:</label>
-                <input
-                    type="text"
-                    id="expense-name"
-                    name="expense-name"
-                    placeholder="Enter expense name"
-                >
+                <div class="form-group">
+                    <label for="expense">Expense Name</label>
 
-                <label for="expense-amount">Amount:</label>
-                <input
-                    type="number"
-                    id="expense-amount"
-                    name="expense-amount"
-                    placeholder="Enter amount"
-                >
+                    <input
+                        type="text"
+                        id="expense"
+                        placeholder="e.g. Groceries"
+                    >
+                </div>
 
-                <label for="expense-category">Category:</label>
-                <select
-                    id="expense-category"
-                    name="expense-category"
-                >
-                    <option value="">Select category</option>
-                    <option value="Food">Food</option>
-                    <option value="Transport">Transport</option>
-                    <option value="Rent">Rent</option>
-                    <option value="Entertainment">Entertainment</option>
-                    <option value="Other">Other</option>
-                </select>
 
-                <label for="expense-date">Date:</label>
-                <input
-                    type="date"
-                    id="expense-date"
-                    name="expense-date"
-                >
+                <div class="form-group">
+                    <label for="amount">Amount (KSh)</label>
 
-                <button type="button" id="add-expense-button">
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="e.g. 1500"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+
+                    <select id="category">
+                        <option value="">Select category</option>
+                        <option>Food</option>
+                        <option>Transport</option>
+                        <option>Education</option>
+                        <option>Entertainment</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+
+                    <input
+                        type="date"
+                        id="date"
+                    >
+                </div>
+
+
+                <button type="submit">
                     Add Expense
                 </button>
 
             </form>
+
         </section>
 
 
-        <!-- Expenses Section -->
-        <section class="expenses-section">
-            <h2>My Expenses</h2>
+        <!-- Expense Table -->
+        <section class="card">
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Amount</th>
-                        <th>Category</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
+            <div class="table-heading">
 
-                <tbody>
-                    <tr>
-                        <td>Lunch</td>
-                        <td>KSh 500</td>
-                        <td>Food</td>
-                        <td>2026-08-25</td>
-                    </tr>
+                <div>
+                    <p class="eyebrow">EXPENSE HISTORY</p>
+                    <h2>My Expenses</h2>
+                </div>
 
-                    <tr>
-                        <td>Bus Fare</td>
-                        <td>KSh 300</td>
-                        <td>Transport</td>
-                        <td>2026-08-26</td>
-                    </tr>
+                <span class="total">
+                    Total: KSh 7,500
+                </span>
 
-                    <tr>
-                        <td>House Rent</td>
-                        <td>KSh 10,000</td>
-                        <td>Rent</td>
-                        <td>2026-08-27</td>
-                    </tr>
+            </div>
 
-                    <tr>
-                        <td>Movie</td>
-                        <td>KSh 800</td>
-                        <td>Entertainment</td>
-                        <td>2026-08-28</td>
-                    </tr>
 
-                    <tr>
-                        <td>Shopping</td>
-                        <td>KSh 1,500</td>
-                        <td>Other</td>
-                        <td>2026-08-29</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Expense</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>Groceries</td>
+                            <td>
+                                <span class="category">Food</span>
+                            </td>
+                            <td>KSh 2,500</td>
+                            <td>01 Sep 2026</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Bus Fare</td>
+                            <td>
+                                <span class="category">Transport</span>
+                            </td>
+                            <td>KSh 1,000</td>
+                            <td>31 Aug 2026</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>School Supplies</td>
+                            <td>
+                                <span class="category">Education</span>
+                            </td>
+                            <td>KSh 3,000</td>
+                            <td>30 Aug 2026</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Lunch</td>
+                            <td>
+                                <span class="category">Food</span>
+                            </td>
+                            <td>KSh 1,000</td>
+                            <td>29 Aug 2026</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
         </section>
 
 
-        <!-- How To Use Section -->
-        <section class="instructions">
-            <details>
-                <summary>How to use this tracker</summary>
-                <p>
-                    Enter the name of your expense, the amount you spent,
-                    select a category, and choose the date. Then click
-                    "Add Expense". The button will be connected to
-                    JavaScript in a future week.
-                </p>
-            </details>
-        </section>
-
-
-        <!-- Multimedia Section -->
-        <section class="multimedia">
-            <h2>Budgeting Tips</h2>
-
-            <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/HQzoZfc3GwQ"
-                title="Budgeting Tips Video"
-                frameborder="0"
-                allowfullscreen>
-            </iframe>
-        </section>
+        <footer>
+            <p>Budget Tracker • Week 3 CSS Visual Design Challenge</p>
+        </footer>
 
     </main>
-
-    <footer>
-        <p>&copy; 2026 My Budget Tracker</p>
-    </footer>
 
 </body>
 </html>
