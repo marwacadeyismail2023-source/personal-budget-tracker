@@ -1,71 +1,66 @@
-# My Budget Tracker
+# Expense Tracker JS
 
-## Project Description
+## Description
 
-My Budget Tracker is a simple web application designed to help users record and keep track of their daily expenses.
+This project is a simple JavaScript expense tracker created as part of the Week 3 assignment.
 
-## What I Have Built So Far
+The project demonstrates how to:
 
-The project currently includes:
+* Store expense amounts using JavaScript variables.
+* Use conditional statements to identify high spending.
+* Store expenses in an array.
+* Use a `for...of` loop to calculate total expenses.
+* Compare total expenses with monthly income.
+* Display whether the expenses are within or over the budget.
 
-* A clear Budget Tracker heading and introduction
-* An expense table
-* Sample expense records
-* An Add Expense form
-* Expense name, amount, category, and date fields
-* A category dropdown with five options:
+## Expense Categories
 
-  * Food
-  * Transport
-  * Rent
-  * Entertainment
-  * Other
-* An Add Expense button
-* A budgeting tips YouTube video
-* A logo/favicon
-* A collapsible "How to use this tracker" section
-* Responsive CSS styling
-* Table hover effects
-* Advanced CSS selectors
-* Page title and Open Graph meta tags
+The project includes six expense categories:
+
+* Rent
+* Food
+* Transport
+* Internet
+* Entertainment
+* Utilities
 
 ## Technologies Used
 
-* HTML5
-* CSS3
-* Git
-* GitHub
-* GitHub Pages
+* HTML
+* JavaScript
 
-## Live Website
+## Project Files
 
-The project is published using GitHub Pages.
+```text
+expense-tracker-js/
+│
+├── index.html
+├── script.js
+└── README.md
+```
 
-Live link:
+## How It Works
 
-https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/
+Each expense is stored in a JavaScript variable. Conditional statements check whether each expense is greater than $100.
 
-## Testing and Feedback
+All six expenses are then placed inside an array, and a loop calculates the total without manually adding the values.
 
-I tested the website on another screen size/device to check that the layout, table, form, and video display correctly.
+Finally, the total expenses are compared with the monthly income to determine whether the budget is within or over budget.
 
-I also asked another person to review the website and provide feedback about the design and usability.
+## Expected Result
 
-### Feedback
+The total expenses are:
 
-The feedback helped me identify areas that could be improved, such as making the page easier to use on smaller screens and keeping the design clean and simple.
+**$715**
 
-## Coming Next
+The monthly income is:
 
-JavaScript functionality starts next week.
+**$800**
 
-The Add Expense button will eventually be connected to JavaScript so that users can add expenses dynamically instead of using only hardcoded sample data.
+Therefore, the budget status is:
 
-## Future Improvements
+**Within Budget**
 
-* Add JavaScript functionality
-* Allow users to add new expenses
-* Calculate total expenses
-* Add expense filtering
-* Improve the budget summary
-* Store expense data
+## Author
+
+Marwa Ali
