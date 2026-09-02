@@ -1,81 +1,112 @@
-// Part 1: Store Sample Expenses
-
-let rent = 250;
-let food = 120;
-let transport = 80;
-let internet = 110;
-let entertainment = 60;
-let utilities = 95;
-
-
-// Part 2: Flag High Spending
-
-if (rent > 100) {
-    console.log("Rent: High Spending");
-} else {
-    console.log("Rent: Normal Spending");
-}
-
-if (food > 100) {
-    console.log("Food: High Spending");
-} else {
-    console.log("Food: Normal Spending");
-}
-
-if (transport > 100) {
-    console.log("Transport: High Spending");
-} else {
-    console.log("Transport: Normal Spending");
-}
-
-if (internet > 100) {
-    console.log("Internet: High Spending");
-} else {
-    console.log("Internet: Normal Spending");
-}
-
-if (entertainment > 100) {
-    console.log("Entertainment: High Spending");
-} else {
-    console.log("Entertainment: Normal Spending");
-}
-
-if (utilities > 100) {
-    console.log("Utilities: High Spending");
-} else {
-    console.log("Utilities: Normal Spending");
-}
-
-
-// Part 3: Calculate Total Expenses
+// Part 1: Store expenses as an array of objects
 
 let expenses = [
-    rent,
-    food,
-    transport,
-    internet,
-    entertainment,
-    utilities
+    {
+        name: "Rent",
+        amount: 250,
+        category: "Housing"
+    },
+    {
+        name: "Food",
+        amount: 120,
+        category: "Food"
+    },
+    {
+        name: "Transport",
+        amount: 80,
+        category: "Transport"
+    },
+    {
+        name: "Internet",
+        amount: 110,
+        category: "Utilities"
+    },
+    {
+        name: "Entertainment",
+        amount: 60,
+        category: "Entertainment"
+    },
+    {
+        name: "Electricity",
+        amount: 95,
+        category: "Utilities"
+    }
 ];
 
-let totalExpenses = 0;
 
-for (let expense of expenses) {
-    totalExpenses += expense;
+// Part 2: Calculate total expenses
+
+function calculateTotal() {
+    let total = expenses.reduce(function (sum, expense) {
+        return sum + Number(expense.amount);
+    }, 0);
+
+    return Math.round(total * 100) / 100;
 }
 
-console.log("Total Expenses: $" + totalExpenses);
 
+// Part 3: Render expenses to the DOM
 
-// Part 4: Budget Check
+function renderExpenses() {
+    const tableBody = document.getElementById("expenseTableBody");
 
-let monthlyIncome = 800;
+    // Clear existing table rows
+    tableBody.innerHTML = "";
 
-console.log("Monthly Income: $" + monthlyIncome);
-console.log("Total Expenses: $" + totalExpenses);
+    // Create a row for every expense
+    expenses.forEach(function (expense) {
+        const row = document.createElement("tr");
 
-if (totalExpenses <= monthlyIncome) {
-    console.log("Status: Within Budget");
-} else {
-    console.log("Status: Over Budget");
+        row.innerHTML = `
+            <td>${expense.name}</td>
+            <td>$${Number(expense.amount).toFixed(2)}</td>
+            <td>${expense.category}</td>
+        `;
+
+        tableBody.appendChild(row);
+    });
+
+    // Update total
+    document.getElementById("totalExpenses").textContent =
+        "$" + calculateTotal().toFixed(2);
 }
+
+
+// Part 4: Add Expense event listener
+
+const addExpenseButton = document.getElementById("addExpenseButton");
+
+addExpenseButton.addEventListener("click", function () {
+
+    const name = document.getElementById("expenseName").value;
+    const amount = document.getElementById("expenseAmount").value;
+    const category = document.getElementById("expenseCategory").value;
+
+    // Check that all fields are filled
+    if (name === "" || amount === "" || category === "") {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Create a new expense object
+    const newExpense = {
+        name: name,
+        amount: Number(amount),
+        category: category
+    };
+
+    // Add the new expense to the array
+    expenses.push(newExpense);
+
+    // Re-render the table
+    renderExpenses();
+
+    // Clear the form
+    document.getElementById("expenseName").value = "";
+    document.getElementById("expenseAmount").value = "";
+    document.getElementById("expenseCategory").value = "";
+});
+
+
+// Display expenses when the page loads
+renderExpenses();

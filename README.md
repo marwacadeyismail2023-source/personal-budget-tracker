@@ -1,65 +1,76 @@
-# Expense Tracker JS
+# Expense Tracker JavaScript
 
-## Description
+## Project Description
 
-This project is a simple JavaScript expense tracker created as part of the Week 3 assignment.
+This project is a simple Expense Tracker application built using HTML, CSS, and JavaScript.
 
-The project demonstrates how to:
+The application allows users to view their expenses, calculate the total amount spent, and add new expenses without refreshing the page.
 
-* Store expense amounts using JavaScript variables.
-* Use conditional statements to identify high spending.
-* Store expenses in an array.
-* Use a `for...of` loop to calculate total expenses.
-* Compare total expenses with monthly income.
-* Display whether the expenses are within or over the budget.
+## Features
 
-## Expense Categories
+* Stores expenses in an array of objects.
+* Each expense contains:
 
-The project includes six expense categories:
-
-* Rent
-* Food
-* Transport
-* Internet
-* Entertainment
-* Utilities
+  * Name
+  * Amount
+  * Category
+* Calculates the total expenses using `reduce()`.
+* Formats expense amounts to two decimal places.
+* Dynamically renders expenses in an HTML table.
+* Allows users to add new expenses using a form.
+* Updates the table automatically when a new expense is added.
+* Uses JavaScript event listeners to handle user actions.
 
 ## Technologies Used
 
-* HTML
+* HTML5
+* CSS3
 * JavaScript
 
-## Project Files
+## Project Structure
 
 ```text
 expense-tracker-js/
 │
 ├── index.html
+├── style.css
 ├── script.js
 └── README.md
 ```
 
 ## How It Works
 
-Each expense is stored in a JavaScript variable. Conditional statements check whether each expense is greater than $100.
+The expenses are stored as objects inside a JavaScript array.
 
-All six expenses are then placed inside an array, and a loop calculates the total without manually adding the values.
+The `calculateTotal()` function uses the `reduce()` method to calculate the total amount of all expenses.
 
-Finally, the total expenses are compared with the monthly income to determine whether the budget is within or over budget.
+The `renderExpenses()` function clears the existing table and dynamically creates new table rows from the expenses array.
 
-## Expected Result
+When the user clicks the **Add Expense** button, an event listener reads the form values, creates a new expense object, adds it to the array, and updates the table without refreshing the page.
 
-The total expenses are:
+## Learning Objectives
 
-**$715**
+This project demonstrates my understanding of:
 
-The monthly income is:
+* Arrays of objects
+* JavaScript functions
+* Array methods such as `reduce()` and `forEach()`
+* DOM manipulation
+* Event listeners
+* Form input handling
+* Number formatting
+* Dynamic content rendering
 
-**$800**
+## Future Improvements
 
-Therefore, the budget status is:
+Future versions of this project could include:
 
-**Within Budget**
+* Delete expense functionality
+* Edit expense functionality
+* Expense filtering by category
+* Local storage
+* Monthly budget tracking
+* Expense charts and summaries
 
 ## Author
 
