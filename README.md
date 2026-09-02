@@ -1,74 +1,71 @@
-# Budget Tracker
+# My Budget Tracker
 
-## Week 3 CSS Visual Design Challenge
+## Project Description
 
-This project is a Budget Tracker designed using HTML and CSS.
+My Budget Tracker is a simple web application designed to help users record and keep track of their daily expenses.
 
-The purpose of this project is to demonstrate visual design principles
-using color, typography, table styling, form styling, and the CSS Box Model.
+## What I Have Built So Far
 
-## Features
+The project currently includes:
 
-### 1. Color Palette
+* A clear Budget Tracker heading and introduction
+* An expense table
+* Sample expense records
+* An Add Expense form
+* Expense name, amount, category, and date fields
+* A category dropdown with five options:
 
-The project uses a consistent color palette:
-
-- Navy blue for headings and table headers
-- Green for buttons and important elements
-- White for cards
-- Light gray for the page background
-
-### 2. Typography
-
-Two Google Fonts are used:
-
-- Poppins - used for headings
-- DM Sans - used for body text, forms, buttons, and tables
-
-### 3. Expense Form
-
-The Add Expense form contains:
-
-- Expense name
-- Amount
-- Category
-- Date
-- Add Expense button
-
-The inputs have padding, borders, rounded corners, and focus effects.
-
-### 4. Expense Table
-
-The expense table includes:
-
-- Styled table header
-- Borders
-- Padding
-- Alternating row colors
-- Hover effects
-- Category labels
-
-### 5. CSS Box Model
-
-The project intentionally uses:
-
-- Margin
-- Padding
-- Borders
-- Border-radius
-- Box shadows
-
-The page heading, Add Expense form, and Expense Table are displayed
-as separate cards.
-
-## Files
-
-- `index.html` - Contains the structure of the Budget Tracker.
-- `style.css` - Contains the visual styling.
-- `README.md` - Explains the project and its features.
+  * Food
+  * Transport
+  * Rent
+  * Entertainment
+  * Other
+* An Add Expense button
+* A budgeting tips YouTube video
+* A logo/favicon
+* A collapsible "How to use this tracker" section
+* Responsive CSS styling
+* Table hover effects
+* Advanced CSS selectors
+* Page title and Open Graph meta tags
 
 ## Technologies Used
 
-- HTML5
-- CSS3
-- Google Fonts
+* HTML5
+* CSS3
+* Git
+* GitHub
+* GitHub Pages
+
+## Live Website
+
+The project is published using GitHub Pages.
+
+Live link:
+
+https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/
+
+## Testing and Feedback
+
+I tested the website on another screen size/device to check that the layout, table, form, and video display correctly.
+
+I also asked another person to review the website and provide feedback about the design and usability.
+
+### Feedback
+
+The feedback helped me identify areas that could be improved, such as making the page easier to use on smaller screens and keeping the design clean and simple.
+
+## Coming Next
+
+JavaScript functionality starts next week.
+
+The Add Expense button will eventually be connected to JavaScript so that users can add expenses dynamically instead of using only hardcoded sample data.
+
+## Future Improvements
+
+* Add JavaScript functionality
+* Allow users to add new expenses
+* Calculate total expenses
+* Add expense filtering
+* Improve the budget summary
+* Store expense data
